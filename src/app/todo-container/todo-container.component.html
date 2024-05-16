@@ -1,0 +1,37 @@
+<div class="todo-list">
+    <h2>{{ title }}</h2>
+    <ul>
+      @for (todoItem of list; track $index) {
+      <li>
+        @if (!todoItem.checked) {
+          <app-todo-item
+          [id]="todoItem.id"
+          [checked]="todoItem.checked"
+          [content]="todoItem.content"
+          (done)="handleEvent($event)"
+        ></app-todo-item>
+        }
+      </li>
+      }
+    </ul>
+  
+  
+    @if (doneCount > 0) {
+      <h4>Done</h4>
+    }
+    <ul>
+      @for (todoItem of list; track $index) {
+        <li>
+          @if (todoItem.checked) {
+            <app-todo-item
+            [id]="todoItem.id"
+            [checked]="todoItem.checked"
+            [content]="todoItem.content"
+            (done)="handleEvent($event)"
+          ></app-todo-item>
+          }
+        </li>
+        }
+    </ul>
+  </div>
+  
