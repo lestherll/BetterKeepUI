@@ -5,12 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoContainerComponent } from './todo-container/todo-container.component';
+import { BaseLayoutComponent } from './base-layout/base-layout.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
-    TodoContainerComponent
+    TodoContainerComponent,
+    BaseLayoutComponent,
+    SidebarComponent,
+    ToolbarComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

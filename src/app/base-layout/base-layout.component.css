@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 25%; /* Adjust this width as needed */
+    background-color: #f4f4f4; /* Just an example background color */
+    border-right: black solid;
+    padding: 0.5%;
+  }
+  
+  .note {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+  }
+  
+  .toolbar {
+    height: 7%; /* Adjust this height as needed */
+    background-color: #ddd; /* Just an example background color */
+    border-bottom: black solid;
+    padding: 0.5%;
+  }
+  
+  .note-editor {
+    flex-grow: 1;
+    background-color: #fff; /* Just an example background color */
+    padding: 0.5%;
+  }
