@@ -10,9 +10,4 @@ import { TodoContainerComponent } from '../todo-container/todo-container.compone
 })
 export class EditorComponent {
   @Input() note!: Note;
-
-  
-  
-  
-
 }
