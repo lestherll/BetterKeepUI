@@ -4,4 +4,19 @@
     <h2 style="padding: 1%;">Recent Notes</h2>
     <!-- add list of notes-->
 
+    <!-- <mat-list>
+        <mat-list-item>Item 1</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 2</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 3</mat-list-item>
+      </mat-list> -->
+
+    <ul>
+    @for (note of notes; track $index){
+        <div>
+            <li>{{note.title}}</li>
+        </div>
+      }
+    </ul>
 </div>

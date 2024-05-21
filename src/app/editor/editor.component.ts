@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { Note, TodoItem } from '../shared/types';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoContainerComponent } from '../todo-container/todo-container.component';
 
 @Component({
   selector: 'app-editor',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './editor.component.css'
 })
 export class EditorComponent {
-
+  @Input() note!: Note;
 }
