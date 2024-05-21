@@ -1,7 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
-import { Note, TodoItem } from '../shared/types';
-import { TodoItemComponent } from '../todo-item/todo-item.component';
-import { TodoContainerComponent } from '../todo-container/todo-container.component';
+import { Component, Input } from '@angular/core';
+import { Note } from '../shared/types';
 
 @Component({
   selector: 'app-editor',

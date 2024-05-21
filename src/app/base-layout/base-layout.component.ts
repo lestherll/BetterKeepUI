@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TodoItem, Note } from '../shared/types';
+import { Note } from '../shared/types';
 
 
 @Component({
