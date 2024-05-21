@@ -1,13 +1,13 @@
 <div class="container">
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <app-sidebar [notes]="notes"></app-sidebar>
     </div>
     <div class="note">
       <div class="toolbar">
         <app-toolbar></app-toolbar>
       </div>
       <div class="note-editor">
-        <app-editor></app-editor>
+        <app-editor [note]="note"></app-editor>
       </div>
     </div>
   </div>

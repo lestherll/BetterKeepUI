@@ -1,1 +1,9 @@
-<p>editor works!</p>
+<div>
+    <div style="border: dashed black; padding: 1%; margin-bottom: 1%;">
+        <h1>{{note.title}}</h1>
+    </div>
+    <div style="border: dashed black; padding: 1%;">
+        <p>{{note.plaintext}}</p>
+        <app-todo-container [list]="note.checklist"></app-todo-container>
+    </div>
+</div>
