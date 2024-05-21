@@ -9,6 +9,7 @@ import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { EditorComponent } from './editor/editor.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditorComponent } from './editor/editor.component';
     BaseLayoutComponent,
     SidebarComponent,
     ToolbarComponent,
-    EditorComponent
+    EditorComponent,
+    HelloWorldComponent
   ],
   imports: [
     BrowserModule,
