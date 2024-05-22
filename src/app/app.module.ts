@@ -24,6 +24,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ToolbarComponent,
     EditorComponent,
     HelloWorldComponent,
+    
   ],
   imports: [
     BrowserModule,

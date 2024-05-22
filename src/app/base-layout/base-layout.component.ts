@@ -7,7 +7,7 @@ import { Note } from '../shared/types';
   templateUrl: './base-layout.component.html',
   styleUrl: './base-layout.component.css'
 })
-export class BaseLayoutComponent {
+export class BaseLayoutComponent{
   @Input() notes!: Array<Note>; 
   note!:Note;
   ngOnInit(): void{
