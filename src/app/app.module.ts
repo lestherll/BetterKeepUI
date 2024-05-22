@@ -9,6 +9,9 @@ import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { EditorComponent } from './editor/editor.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
@@ -19,11 +22,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BaseLayoutComponent,
     SidebarComponent,
     ToolbarComponent,
-    EditorComponent
+    EditorComponent,
+    HelloWorldComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),
