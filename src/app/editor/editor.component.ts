@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Note } from '../shared/types';
 
 @Component({
   selector: 'app-editor',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './editor.component.css'
 })
 export class EditorComponent {
-
+  @Input() note!: Note;
 }

@@ -14,14 +14,11 @@ export class TodoContainerComponent {
   doneCount = 0;
 
   handleEvent(event: TodoItem) {
-    // this.list = this.list.filter(todo => todo.id !== event.id)
-    let todo = this.list.find(todo => todo.id === event.id);
+    const todo = this.list.find(todo => todo.id === event.id);
     if (todo !== undefined) {
       this.doneCount += event.checked === true ? 1 : -1;
       todo.checked = event.checked;
     }
     console.log(this.doneCount);
-    // this.done.push(event);
-    // console.log(this.done);
   }
 }

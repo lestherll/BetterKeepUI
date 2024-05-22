@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Note } from '../shared/types';
 
 
 @Component({
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './base-layout.component.css'
 })
 export class BaseLayoutComponent {
-
+  @Input() notes!: Array<Note>; 
+  note!:Note;
+  ngOnInit(): void{
+    this.note=this.notes[0]
+  }
 }
