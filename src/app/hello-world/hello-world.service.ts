@@ -6,12 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HelloWorldService {
-  private helloWorldUrl = 'https://localhost:8080/hello';
+  private helloWorldUrl = 'http://localhost:8080/hello';
 
   constructor(private http: HttpClient) { }
 
 
   getHelloWorldMessage(): Observable<any> {
-    return this.http.get(this.helloWorldUrl);
+    // the response is plain text, the augular expect json as default
+    return this.http.get(this.helloWorldUrl, { responseType: 'text' });
   }
 }
