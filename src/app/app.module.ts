@@ -36,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatDividerModule,
     MatListModule,
-    FormsModule
+    FormsModule,
     HttpClientModule,
   ],
   providers: [
