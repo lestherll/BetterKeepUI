@@ -1,5 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { Note } from '../shared/types';
+import { Component, Input, Output } from '@angular/core';
+import { Note, TodoItem } from '../shared/types';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoContainerComponent } from '../todo-container/todo-container.component';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgModel } from '@angular/forms';
+import { ContenteditableModelDirective } from '../contenteditable-model.directive';
 
 @Component({
   selector: 'app-editor',
@@ -8,4 +13,5 @@ import { Note } from '../shared/types';
 })
 export class EditorComponent {
   @Input() note!: Note;
+
 }

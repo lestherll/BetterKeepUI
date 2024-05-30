@@ -1,13 +1,13 @@
 <div>
     <h2>{{ title }}</h2>
     <ul>
-      @for (todoItem of list; track $index) {
+      @for (todo of list; track $index) {
       <li>
-        @if (!todoItem.checked) {
-          <app-todo-item
-          [id]="todoItem.id"
-          [checked]="todoItem.checked"
-          [content]="todoItem.content"
+        @if (!todo.checked) {
+          <app-todo-item contenteditableModel
+          [id]="todo.id"
+          [checked]="todo.checked"
+          [content]="todo.content"
           (done)="handleEvent($event)"
         ></app-todo-item>
         }
@@ -20,13 +20,13 @@
       <h4>Done</h4>
     }
     <ul>
-      @for (todoItem of list; track $index) {
+      @for (todo of list; track $index) {
         <li>
-          @if (todoItem.checked) {
-            <app-todo-item
-            [id]="todoItem.id"
-            [checked]="todoItem.checked"
-            [content]="todoItem.content"
+          @if (todo.checked) {
+            <app-todo-item  contenteditableModel
+            [id]="todo.id"
+            [checked]="todo.checked"
+            [content]="todo.content"
             (done)="handleEvent($event)"
           ></app-todo-item>
           }

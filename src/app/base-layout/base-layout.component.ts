@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Note } from '../shared/types';
-
+import { TodoItem, Note } from '../shared/types';
 
 @Component({
   selector: 'app-base-layout',
@@ -10,7 +9,14 @@ import { Note } from '../shared/types';
 export class BaseLayoutComponent {
   @Input() notes!: Array<Note>; 
   note!:Note;
+
   ngOnInit(): void{
     this.note=this.notes[0]
+    console.log("base init done")
+  }
+
+  changeEditorNote(n: any): void{
+    this.note=n
+
   }
 }

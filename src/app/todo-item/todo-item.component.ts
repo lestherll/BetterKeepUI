@@ -14,7 +14,13 @@ export class TodoItemComponent {
 
   handleClick() {
     this.checked = !this.checked;
-    console.log("checked");
+    console.log("checked",this.content);
     this.done.emit({id: this.id, checked: this.checked, content: this.content});
   }
+
+  printInfo(ev: any){
+    console.log(ev.target.innerText, this.content)
+  }
+
+
 }

@@ -9,10 +9,15 @@ import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { EditorComponent } from './editor/editor.component';
+
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { ContenteditableModelDirective } from './contenteditable-model.directive';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -23,11 +28,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     SidebarComponent,
     ToolbarComponent,
     EditorComponent,
+    ContenteditableModelDirective,
     HelloWorldComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatDividerModule,
+    MatListModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [

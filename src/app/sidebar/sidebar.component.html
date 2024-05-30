@@ -1,22 +1,15 @@
 <h1 style="border: black solid; padding: 1%;">Back</h1>
 <br>
 <div style="border: dashed black; padding: 1%;" >
-    <h2 style="padding: 1%;">Recent Notes</h2>
+    <h1 style="padding: 3%;">Recent Notes</h1>
     <!-- add list of notes-->
 
-    <!-- <mat-list>
-        <mat-list-item>Item 1</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Item 2</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Item 3</mat-list-item>
-      </mat-list> -->
-
-    <ul>
+    <mat-list >   
     @for (note of notes; track $index){
-        <div>
-            <li>{{note.title}}</li>
-        </div>
+        <mat-divider></mat-divider>
+        <mat-list-item id="{{note.id}}" (click)="changeNote($event)">{{note.title}}</mat-list-item>
       }
-    </ul>
+    <mat-divider></mat-divider>
+    </mat-list>
+
 </div>
