@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TodoItem, Note } from '../shared/types';
 
-
 @Component({
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
@@ -18,5 +17,6 @@ export class BaseLayoutComponent {
 
   changeEditorNote(n: any): void{
     this.note=n
+
   }
 }

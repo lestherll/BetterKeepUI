@@ -20,9 +20,11 @@ export class TodoContainerComponent implements OnInit {
   }
 
   handleEvent(event: TodoItem) {
+
     console.log("in container, this is the event", event.content)
     // this.list = this.list.filter(todo => todo.id !== event.id)
     let todo = this.list.find(todo => todo.id === event.id);
+
     if (todo !== undefined) {
       console.log("in container, this is todo", todo.content)
       this.doneCount += event.checked === true ? 1 : -1;
@@ -31,7 +33,5 @@ export class TodoContainerComponent implements OnInit {
       
     }
     console.log(this.doneCount);
-    // this.done.push(event);
-    // console.log(this.done);
   }
 }

@@ -10,6 +10,7 @@ import {MatListModule} from '@angular/material/list';
 })
 export class SidebarComponent {
   @Input() notes!: Array<Note>;
+
   @Output() selectNewNote = new EventEmitter<Note>();
 
   changeNote(ev: MouseEvent): void {
@@ -24,4 +25,5 @@ export class SidebarComponent {
     this.selectNewNote.emit(newNote);
 
   }
+
 }
