@@ -10,6 +10,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { EditorComponent } from './editor/editor.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { ContenteditableModelDirective } from './contenteditable-model.directive';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +24,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BaseLayoutComponent,
     SidebarComponent,
     ToolbarComponent,
-    EditorComponent
+    EditorComponent,
+    ContenteditableModelDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDividerModule,
+    MatListModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

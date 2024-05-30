@@ -1,9 +1,9 @@
-<div>
+<div >
     <div style="border: dashed black; padding: 1%; margin-bottom: 1%;">
-        <h1>{{note.title}}</h1>
+        <h1 contenteditable="true" contenteditableModel [(ngModel)]="note.title" id="title">{{note.title}}</h1>
     </div>
     <div style="border: dashed black; padding: 1%;">
-        <p>{{note.plaintext}}</p>
-        <app-todo-container [list]="note.checklist"></app-todo-container>
+        <p contenteditable="true" contenteditableModel [(ngModel)]="note.plaintext" id="plaintext" >{{note.plaintext}}</p>
+        <app-todo-container id="checklist" [list]="note.checklist"></app-todo-container>
     </div>
 </div>
