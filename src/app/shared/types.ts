@@ -1,3 +1,5 @@
+// import { UUID } from 'crypto';
+
 export interface TodoItem {
   id: string;
   checked: boolean;
@@ -5,7 +7,7 @@ export interface TodoItem {
 }
 
 export interface Note {
-  id: number;
+  id: string;
   title: string;
   plaintext: string;
   checklist: Array<TodoItem>;

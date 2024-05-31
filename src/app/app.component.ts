@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { randomUUID } from 'crypto';
 import { Note, TodoItem } from './shared/types';
 
 @Component({
@@ -27,7 +28,7 @@ export class AppComponent {
   ];
 
   n1: Note = {
-    id: 0,
+    id: 'abcde',
     title: 'Hello World',
     plaintext: 'World in plaintext',
     checklist: this.list2,
@@ -35,7 +36,7 @@ export class AppComponent {
   };
 
   n2: Note = {
-    id: 1,
+    id: '12345',
     title: 'Groceries',
     plaintext: 'This week I got to Tesco',
     checklist: this.list,
