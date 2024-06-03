@@ -13,6 +13,8 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ToolbarComponent,
     EditorComponent,
     HelloWorldComponent,
+    LoginComponent,
+    HomeComponent,
     
   ],
   imports: [
