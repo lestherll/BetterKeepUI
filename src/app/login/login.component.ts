@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,20 +7,9 @@ import { LoginService } from './login.service';
 })
 
 export class LoginComponent {
-
-  constructor(private loginService: LoginService) { }
-
   login() {
     console.log('Login button clicked');
-    const redirectUrl = `${window.location.origin}/home`;
-    this.loginService.login(redirectUrl).subscribe(
-      (responseUrl: string) => {
-        console.log('Received response URL:', responseUrl);
-        window.location.href = responseUrl;
-      },
-      (error) => {
-        console.error('Login failed', error);
-      }
-    );
+    const backendLoginUrl = `http://localhost:8080/auth/google?state=${encodeURIComponent(window.location.origin + '/home')}`;
+    window.location.href = backendLoginUrl;
   }
 }
