@@ -1,3 +1,11 @@
-<div *ngIf="accessToken">Access Token is: {{ accessToken }}</div>
-<br>
-<div *ngIf="refreshToken">Refresh Token is: {{ refreshToken }}</div>
+<div *ngIf="loginSuccess">
+    <h2>Login Successful!</h2>
+    <br>
+    <div *ngIf="accessToken">Access Token is: {{ accessToken }}</div>
+    <br>
+    <div *ngIf="refreshToken">Refresh Token is: {{ refreshToken }}</div>
+</div>
+<div *ngIf="!loginSuccess && errorMessage">
+    <h2>Login Failed</h2>
+    <div>Error Descriptions: {{ errorMessage }}</div>
+</div>

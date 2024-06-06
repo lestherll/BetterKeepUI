@@ -7,14 +7,18 @@ import { TokenService } from './token.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
+  loginSuccess: boolean = false;
   accessToken: string | null = null;
   refreshToken: string | null = null;
+  errorMessage: string | null = null;
 
   constructor(private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.tokenService.extractToken();
+    this.tokenService.extractTokens();
+    this.loginSuccess = this.tokenService.isLoginSuccess();
     this.accessToken = this.tokenService.getAccessToken();
     this.refreshToken = this.tokenService.getRefreshToken();
+    this.errorMessage = this.tokenService.getErrorMessage();
   }
 }

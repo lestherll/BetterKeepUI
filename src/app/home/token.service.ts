@@ -2,19 +2,23 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
-
+  private loginSuccess: boolean = false;
+  private errorMessage: string | null = null;
   private accessToken: string | null = null;
   private refreshToken: string | null = null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
-  extractToken(): void {
-    this.route.queryParams.subscribe(params => {
+  extractTokens(): void {
+    this.route.queryParams.subscribe((params) => {
+      const status = params['status'] || null;
+      this.loginSuccess = status === 'success';
       this.accessToken = params['accessToken'] || null;
       this.refreshToken = params['refreshToken'] || null;
+      this.errorMessage = params['description'] || null;
     });
   }
 
@@ -24,5 +28,13 @@ export class TokenService {
 
   getRefreshToken(): string | null {
     return this.refreshToken;
+  }
+
+  getErrorMessage(): string | null {
+    return this.errorMessage;
+  }
+
+  isLoginSuccess(): boolean {
+    return this.loginSuccess;
   }
 }
