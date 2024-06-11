@@ -7,6 +7,7 @@ import { Note, TodoItem } from '../shared/types';
   templateUrl: './base-layout.component.html',
   styleUrl: './base-layout.component.css',
 })
+
 export class BaseLayoutComponent implements OnInit {
   @Input() notes!: Array<Note>;
   note!: Note;
@@ -30,5 +31,6 @@ export class BaseLayoutComponent implements OnInit {
 
   changeEditorNote(n: any): void {
     this.note = n;
+
   }
 }

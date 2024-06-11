@@ -21,6 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 import { ContenteditableModelDirective } from './contenteditable-model.directive';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 
@@ -35,6 +37,9 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
     EditorComponent,
     ContenteditableModelDirective,
     HelloWorldComponent,
+    LoginComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,

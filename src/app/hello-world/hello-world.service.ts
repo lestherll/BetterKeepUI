@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,13 @@ export class HelloWorldService {
   constructor(private http: HttpClient) { }
 
 
-  getHelloWorldMessage(): Observable<any> {
+  getHelloWorldMessage(): Observable<string> {
     // the response is plain text, the augular expect json as default
-    return this.http.get(this.helloWorldUrl, { responseType: 'text' });
+    return this.http.get(this.helloWorldUrl, { responseType: 'text' }).pipe(
+      catchError((error) => {
+        console.error('An error occurred:', error);
+        return ["Backend is DOWN"];
+      })
+    );
   }
 }
