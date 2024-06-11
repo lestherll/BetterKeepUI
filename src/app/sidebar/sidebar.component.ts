@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { Note } from '../shared/types';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,6 +16,7 @@ export class SidebarComponent {
   @Output() selectNewNote = new EventEmitter<Note>();
 
   changeNote(ev: MouseEvent): void {
+
     // const clickedNoteId = parseInt((ev.currentTarget as Element).id);
     const clickedNoteId = (ev.currentTarget as Element).id;
 

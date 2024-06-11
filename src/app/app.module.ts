@@ -12,19 +12,19 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TodoContainerComponent } from './todo-container/todo-container.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import { EditorComponent } from './editor/editor.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
 import { ContenteditableModelDirective } from './contenteditable-model.directive';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [

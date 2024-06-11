@@ -1,10 +1,6 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, Input, Output } from '@angular/core';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  NgModel,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgModel} from '@angular/forms';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import { ContenteditableModelDirective } from '../contenteditable-model.directive';
 import { Note, TodoItem } from '../shared/types';
@@ -59,4 +55,5 @@ export class EditorComponent {
       this.note.labels[index] = value;
     }
   }
+
 }
