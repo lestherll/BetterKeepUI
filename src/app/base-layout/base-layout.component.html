@@ -1,6 +1,6 @@
 <div class="container">
     <div class="sidebar">
-      <app-sidebar [notes]="notes"></app-sidebar>
+      <app-sidebar [notes]="notes" (selectNewNote)="changeEditorNote($event)"></app-sidebar>
     </div>
     <div class="note">
       <div class="toolbar">
