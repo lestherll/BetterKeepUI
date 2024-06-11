@@ -14,5 +14,6 @@ export class HelloWorldComponent implements OnInit{
     this.helloWorldService.getHelloWorldMessage().subscribe((data) => {
       this.message = data;
     });
+    console.log(this.message);
   }
 }
