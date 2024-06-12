@@ -1,11 +1,10 @@
 import { AccessDTO } from '../../dto/AccessDTO';
-import { Permission } from './Permission';
 
 export class Access {
   private _accessId: string;
   private _noteId: string;
   private _owner: string;
-  private _permissions: Permission[];
+  private _permissions: string[];
 
   private _originalData: Partial<AccessDTO> = {};
 
@@ -61,10 +60,10 @@ export class Access {
     this._owner = value;
   }
 
-  public get permissions(): Permission[] {
+  public get permissions(): string[] {
     return this._permissions;
   }
-  public set permissions(value: Permission[]) {
+  public set permissions(value: string[]) {
     this._permissions = value;
   }
 }
