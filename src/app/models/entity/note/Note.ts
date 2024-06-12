@@ -18,7 +18,7 @@ export class Note {
     this._body = options.body || [];
     this._labels = options.labels || [];
     this._isPinnned = options.isPinned ?? false;
-    this._state = options.state || NoteState.ACTIVE;
+    this._state = options.state || 'ACTIVE';
 
     // store the original data for patch
     this._originalData = { ...options };
