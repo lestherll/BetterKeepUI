@@ -56,7 +56,7 @@ export class User {
   }
   public set username(value: string) {
     if (!value) {
-      throw new Error("Username cannot be null or empty");
+      throw new Error('Username cannot be null or empty');
     }
     this._username = value;
   }
@@ -66,7 +66,7 @@ export class User {
   }
   public set firstName(value: string) {
     if (!value) {
-      throw new Error("First name cannot be null or empty");
+      throw new Error('First name cannot be null or empty');
     }
     this._firstName = value;
   }
@@ -76,7 +76,7 @@ export class User {
   }
   public set lastName(value: string) {
     if (!value) {
-      throw new Error("Last name cannot be null or empty");
+      throw new Error('Last name cannot be null or empty');
     }
     this._lastName = value;
   }
@@ -86,7 +86,7 @@ export class User {
   }
   public set emailVerified(value: boolean) {
     if (!value) {
-      throw new Error("Email verified cannot be null or empty");
+      throw new Error('Email verified cannot be null or empty');
     }
     this._emailVerified = value;
   }
