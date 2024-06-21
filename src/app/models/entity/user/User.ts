@@ -8,42 +8,42 @@ export class User {
   private _emailVerified: boolean;
   private _picture: string;
 
-  private _originalData: Partial<UserDTO> = {};
+  private _previousState: Partial<UserDTO> = {};
 
   // use the dto response from the backend to create the new user only
-  constructor(options: UserDTO) {
-    this._email = options.email;
-    this._username = options.username || '';
-    this._firstName = options.firstName || '';
-    this._lastName = options.lastName || '';
-    this._emailVerified = options.emailVerified ?? false;
-    this._picture = options.picture || '';
+  constructor(dto: UserDTO) {
+    this._email = dto.email;
+    this._username = dto.username || '';
+    this._firstName = dto.firstName || '';
+    this._lastName = dto.lastName || '';
+    this._emailVerified = dto.emailVerified ?? false;
+    this._picture = dto.picture || '';
 
     // store the original data for patch
-    this._originalData = { ...options };
+    this._previousState = { ...dto };
   }
 
   // get the patch payload
   getPatchPayload(): Partial<UserDTO> {
     const payload: Partial<UserDTO> = {};
-    if (this._username !== this._originalData.username) {
+    if (this._username !== this._previousState.username) {
       payload.username = this._username;
     }
-    if (this._firstName !== this._originalData.firstName) {
+    if (this._firstName !== this._previousState.firstName) {
       payload.firstName = this._firstName;
     }
-    if (this._lastName !== this._originalData.lastName) {
+    if (this._lastName !== this._previousState.lastName) {
       payload.lastName = this._lastName;
     }
-    if (this._picture !== this._originalData.picture) {
+    if (this._picture !== this._previousState.picture) {
       payload.picture = this._picture;
     }
     return payload;
   }
 
   // recieve the response to update (able for both patch and put)
-  updateOriginalData(newData: Partial<UserDTO>): void {
-    Object.assign(this._originalData, newData);
+  updateUser(dto: Partial<UserDTO>): void {
+    Object.assign(this._previousState, dto);
   }
 
   //getter and setter

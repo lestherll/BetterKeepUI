@@ -3,6 +3,6 @@ export interface AccessDTO {
   accessId: string;
   noteId?: string;
   owner?: string;
-  // list of user ids
+  // sets of user ids
   permissions?: string[];
 }

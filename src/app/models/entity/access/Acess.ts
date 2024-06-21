@@ -4,41 +4,42 @@ export class Access {
   private _accessId: string;
   private _noteId: string;
   private _owner: string;
-  private _permissions: string[];
+  private _permissions: Set<string>;
 
-  private _originalData: Partial<AccessDTO> = {};
+  private _previousState: Partial<AccessDTO> = {};
 
-  constructor(options: AccessDTO) {
-    this._noteId = options.noteId || '';
-    this._accessId = options.accessId || '';
-    this._owner = options.owner || '';
-    this._permissions = options.permissions || [];
+  constructor(dto: AccessDTO) {
+    this._noteId = dto.noteId || '';
+    this._accessId = dto.accessId || '';
+    this._owner = dto.owner || '';
+    this._permissions = new Set<string>(dto.permissions || []);
 
     // store the original data for patch
-    this._originalData = { ...options };
+    this._previousState = { ...dto };
   }
 
   // get the patch payload
   getPatchPayload(): Partial<AccessDTO> {
     const payload: Partial<AccessDTO> = {};
-    if (this._noteId !== this._originalData.noteId) {
+    if (this._noteId !== this._previousState.noteId) {
       payload.noteId = this._noteId;
     }
-    if (this._accessId !== this._originalData.accessId) {
+    if (this._accessId !== this._previousState.accessId) {
       payload.accessId = this._accessId;
     }
-    if (this._owner !== this._originalData.owner) {
+    if (this._owner !== this._previousState.owner) {
       payload.owner = this._owner;
-    }
-    if (this._permissions !== this._originalData.permissions) {
-      payload.permissions = this._permissions;
     }
     return payload;
   }
 
   // recieve the response to update (able for both patch and put)
-  updateOriginalData(newData: Partial<AccessDTO>): void {
-    Object.assign(this._originalData, newData);
+  updateAccess(dto: Partial<AccessDTO>): void {
+    Object.assign(this._previousState, dto);
+    this._noteId = dto.noteId || '';
+    this._accessId = dto.accessId || '';
+    this._owner = dto.owner || '';
+    this._permissions = new Set<string>(dto.permissions || []);
   }
 
   // getter and setter
@@ -60,10 +61,10 @@ export class Access {
     this._owner = value;
   }
 
-  public get permissions(): string[] {
+  public get permissions(): Set<string> {
     return this._permissions;
   }
-  public set permissions(value: string[]) {
+  public set permissions(value: Set<string>) {
     this._permissions = value;
   }
 }

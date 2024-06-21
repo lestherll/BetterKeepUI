@@ -1,12 +1,29 @@
+import { CheckListItemDTO } from '../../dto/NoteDTO';
+
 export class CheckListItem {
   private _isChecked: boolean;
   private _text: string;
 
-  constructor(isChecked: boolean, text: string) {
+  // init in frontend, default value: false and empty
+  constructor(isChecked: boolean = false, text: string = '') {
     this._isChecked = isChecked;
     this._text = text;
   }
 
+  // convert into DTO
+  toDTO(): CheckListItemDTO {
+    return {
+      isChecked: this._isChecked,
+      text: this._text,
+    };
+  }
+
+  // create checklist item from DTO (backend response)
+  static fromDTO(dto: CheckListItemDTO): CheckListItem {
+    return new CheckListItem(dto.isChecked, dto.text);
+  }
+
+  // getter and setter
   public get isChecked(): boolean {
     return this._isChecked;
   }
